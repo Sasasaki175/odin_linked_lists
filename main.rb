@@ -23,3 +23,15 @@ list.pop
 puts list
 
 puts list.contains?('snake')
+
+list.insert_at('mario', 0)
+
+puts list
+
+list.remove_at(3)
+
+puts list
+
+list.remove_at(0)
+
+puts list
