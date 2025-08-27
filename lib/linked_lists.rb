@@ -100,6 +100,42 @@ class LinkedList
 
     return string
   end
+
+  def insert_at(value, index)
+    node = @head
+    i = 0
+    
+    return puts 'Invalid index' unless (index < size)
+    
+    if index == 0
+      @head = Node.new(value, @head)
+    else
+      while i < index
+        previous_node = node
+        node = node.next_node
+        i += 1
+      end
+
+      previous_node.next_node = Node.new(value, node) unless previous_node == nil
+    end
+  end
+
+  def remove_at(index)
+    node = @head
+    i = 0
+
+    while i < index
+      previous_node = node
+      node = node.next_node
+      i += 1
+    end
+
+    if index == 0
+      @head = node.next_node
+    else
+      previous_node.next_node = node.next_node
+    end
+  end
 end
 
 class Node
